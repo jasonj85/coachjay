@@ -1,4 +1,4 @@
-namespace CoachJay.Api.Models
+namespace CoachJay.API.Models
 {
     public class Value
     {
