@@ -12,25 +12,38 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AlertifyService } from './_services/alertify.service';
+import { BlogComponent } from './blog/blog.component';
+import { InsightsComponent } from './insights/insights.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
+import { QuestionsComponent } from './questions/questions.component';
+import { AuthGuard } from './_guards/auth.guard';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
    declarations: [
       AppComponent,
       NavComponent,
       HomeComponent,
-      RegisterComponent
+      RegisterComponent,
+      BlogComponent,
+      InsightsComponent,
+      QuestionsComponent,
+      AdminComponent
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
       FormsModule,
-      BsDropdownModule.forRoot()
+      BsDropdownModule.forRoot(),
+      RouterModule.forRoot(appRoutes)
    ],
    providers: [
       AuthService,
       ErrorInterceptorProvider,
-      AlertifyService
+      AlertifyService,
+      AuthGuard
    ],
    bootstrap: [
       AppComponent

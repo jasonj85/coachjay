@@ -1,0 +1,77 @@
+[
+    {
+      "Username": "Jan",
+      "Gender": "female",
+      "DateOfBirth": "Jul 13 1969",
+      "Password": "password",
+      "Created": "Jun 20 2017",
+      "LastActive": "Jun 20 2017",
+      "Photos": [
+        {
+          "url": "https://randomuser.me/api/portraits/women/54.jpg",
+          "isMain": true,
+          "description": "Voluptate mollit minim et dolore amet."
+        }
+      ]
+    },
+    {
+      "Username": "Rita",
+      "Gender": "female",
+      "DateOfBirth": "Jun 23 1961",
+      "Password": "password",
+      "Created": "Aug 05 2017",
+      "LastActive": "Aug 05 2017",
+      "Photos": [
+        {
+          "url": "https://randomuser.me/api/portraits/women/2.jpg",
+          "isMain": true,
+          "description": "Esse veniam ea aute elit consequat incididunt culpa eiusmod exercitation duis officia commodo veniam sint."
+        }
+      ]
+    },
+    {
+      "Username": "Jacquelyn",
+      "Gender": "female",
+      "DateOfBirth": "Jul 04 1978",
+      "Password": "password",
+      "Created": "Aug 30 2017",
+      "LastActive": "Aug 30 2017",
+      "Photos": [
+        {
+          "url": "https://randomuser.me/api/portraits/women/87.jpg",
+          "isMain": true,
+          "description": "Sint esse voluptate culpa aliqua fugiat labore."
+        }
+      ]
+    },
+    {
+      "Username": "Lena",
+      "Gender": "female",
+      "DateOfBirth": "Mar 09 1984",
+      "Password": "password",
+      "Created": "Jan 13 2017",
+      "LastActive": "Jan 13 2017",
+      "Photos": [
+        {
+          "url": "https://randomuser.me/api/portraits/women/16.jpg",
+          "isMain": true,
+          "description": "Aliqua nisi cupidatat amet et et."
+        }
+      ]
+    },
+    {
+      "Username": "Angeline",
+      "Gender": "female",
+      "DateOfBirth": "Jan 23 1984",
+      "Password": "password",
+      "Created": "Jan 22 2017",
+      "LastActive": "Jan 22 2017",
+      "Photos": [
+        {
+          "url": "https://randomuser.me/api/portraits/women/4.jpg",
+          "isMain": true,
+          "description": "Anim esse consequat dolor eu qui eiusmod culpa nulla laborum sint sit exercitation qui."
+        }
+      ]
+    }
+  ]
