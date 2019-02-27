@@ -1,0 +1,39 @@
+<div class="container mt-4">
+  <div class="row">
+    <h1>{{user.username | titlecase}}</h1>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <img class="card-img-top img-thumbnail" src="{{user.photoUrl}}" alt="{{user.username}}">
+        <div class="card-body">
+          <div>
+            <strong>Last Active:</strong>
+            <p>{{user.lastActive}}</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="col-sm-8">
+      <div class="tab-panel">
+
+        <tabset class="user-tabset">
+          <tab heading="About {{user.username}}">
+            <h4>Created</h4>
+            <p>{{user.created | date:"dd MMM yyyy"}}</p>
+            <h4>Last Active</h4>
+            <p>{{user.lastActive | date:"dd MMM yyyy"}}</p>
+            <h4>Gender</h4>
+            <p>{{user.gender | titlecase}}</p>
+          </tab>
+          <tab heading="Photos">
+            <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+          </tab>
+        </tabset>
+      </div>
+
+    </div>
+  </div>
+</div>

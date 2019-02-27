@@ -1,3 +1,8 @@
-<p>
-  admin works!
-</p>
+<div class="container mt-5">
+  <h3>Admins</h3>
+  <div class="row">
+    <div *ngFor="let user of users" class="col-lg-2 col-md-3 col-sm-6">
+      <app-user-list [user]="user"></app-user-list>
+    </div>
+  </div>
+</div>

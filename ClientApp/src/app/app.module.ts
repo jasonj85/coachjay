@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
+import { NgxGalleryModule } from 'ngx-gallery';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -19,6 +21,16 @@ import { appRoutes } from './routes';
 import { QuestionsComponent } from './questions/questions.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { AdminComponent } from './admin/admin.component';
+import { UserService } from './_services/user.service';
+import { UserListComponent } from './admin/user-list/user-list.component';
+import { UserDetailComponent } from './admin/user-detail/user-detail.component';
+import { UserDetailResolver } from './_resolvers/user-detail-resolver';
+import { UserListResolver } from './_resolvers/user-list-resolver';
+
+
+export function tokenGetter() {
+   return localStorage.getItem('token');
+}
 
 @NgModule({
    declarations: [
@@ -29,21 +41,35 @@ import { AdminComponent } from './admin/admin.component';
       BlogComponent,
       InsightsComponent,
       QuestionsComponent,
-      AdminComponent
+      AdminComponent,
+      UserListComponent,
+      UserDetailComponent
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
       FormsModule,
+      NgxGalleryModule,
       BsDropdownModule.forRoot(),
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
+      TabsModule.forRoot(),
+      JwtModule.forRoot({
+         config: {
+            tokenGetter,
+            whitelistedDomains: ['localhost:5000'],
+            blacklistedRoutes: ['localhost:5000/api/posts']
+         }
+      })
    ],
    providers: [
       AuthService,
       ErrorInterceptorProvider,
       AlertifyService,
-      AuthGuard
+      AuthGuard,
+      UserService,
+      UserDetailResolver,
+      UserListResolver
    ],
    bootstrap: [
       AppComponent

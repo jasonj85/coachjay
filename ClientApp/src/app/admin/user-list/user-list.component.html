@@ -1,0 +1,21 @@
+<div class="card mb4">
+  <div class="card-img-wrapper">
+    <img class="card-img-top" src="{{user.photoUrl}}" alt="{{user.username}}">
+    <ul class="list-inline member-icons animate text-center">
+      <li class="list-inline-item">          
+        <button class="btn btn-primary p-2" [routerLink]="['/admin/', user.id]" >Info</button>
+      </li>
+      <li class="list-inline-item">          
+          <button class="btn btn-secondary p-2">Edit</button>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body p-1">
+    <h6 class="card-title text-center mb-1">
+      <i class="fa fa-user"></i> {{user.username}}
+    </h6>
+    <p class="card-text text-muted text-center">
+      Last Login: <br> {{user.lastActive | date: 'EEE d MMM yyyy'}}
+    </p>
+  </div>
+</div>

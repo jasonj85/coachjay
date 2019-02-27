@@ -5,6 +5,9 @@ import { InsightsComponent } from './insights/insights.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { AdminComponent } from './admin/admin.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { UserDetailComponent } from './admin/user-detail/user-detail.component';
+import { UserDetailResolver } from './_resolvers/user-detail-resolver';
+import { UserListResolver } from './_resolvers/user-list-resolver';
 
 export const appRoutes: Routes = [
     // standard pages
@@ -18,7 +21,8 @@ export const appRoutes: Routes = [
         path: '', runGuardsAndResolvers: 'always',
         canActivate: [AuthGuard],
         children: [
-            { path: 'admin', component: AdminComponent, canActivate: [AuthGuard]}
+            { path: 'admin', component: AdminComponent, resolve: {users: UserListResolver} },
+            { path: 'admin/:id', component: UserDetailComponent, resolve: {user: UserDetailResolver} },
         ]
     },
 
