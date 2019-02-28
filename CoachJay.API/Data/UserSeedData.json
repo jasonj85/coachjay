@@ -1,21 +1,26 @@
 [
     {
-      "Username": "Jan",
-      "Gender": "female",
+      "Username": "jj",
+      "FirstName": "Jason",
+      "LastName": "James",
+      "Gender": "male",
+
       "DateOfBirth": "Jul 13 1969",
       "Password": "password",
       "Created": "Jun 20 2017",
       "LastActive": "Jun 20 2017",
       "Photos": [
         {
-          "url": "https://randomuser.me/api/portraits/women/54.jpg",
+          "url": "https://randomuser.me/api/portraits/men/3.jpg",
           "isMain": true,
           "description": "Voluptate mollit minim et dolore amet."
         }
       ]
     },
     {
-      "Username": "Rita",
+      "Username": "rj",
+      "FirstName": "Rita",
+      "LastName": "Jones",
       "Gender": "female",
       "DateOfBirth": "Jun 23 1961",
       "Password": "password",
@@ -30,7 +35,9 @@
       ]
     },
     {
-      "Username": "Jacquelyn",
+      "Username": "js",
+      "FirstName": "Jacquelyn",
+      "LastName": "Smith",
       "Gender": "female",
       "DateOfBirth": "Jul 04 1978",
       "Password": "password",
@@ -45,7 +52,9 @@
       ]
     },
     {
-      "Username": "Lena",
+      "Username": "lo",
+      "FirstName": "Lena",
+      "LastName": "O'Reilly",
       "Gender": "female",
       "DateOfBirth": "Mar 09 1984",
       "Password": "password",
@@ -60,7 +69,9 @@
       ]
     },
     {
-      "Username": "Angeline",
+      "Username": "ak",
+      "FirstName": "Angeline",
+      "LastName": "Krupp",
       "Gender": "female",
       "DateOfBirth": "Jan 23 1984",
       "Password": "password",

@@ -8,6 +8,9 @@ import { AuthGuard } from './_guards/auth.guard';
 import { UserDetailComponent } from './admin/user-detail/user-detail.component';
 import { UserDetailResolver } from './_resolvers/user-detail-resolver';
 import { UserListResolver } from './_resolvers/user-list-resolver';
+import { UserEditComponent } from './admin/user-edit/user-edit.component';
+import { UserEditResolver } from './_resolvers/user-edit-resolver';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes-guard';
 
 export const appRoutes: Routes = [
     // standard pages
@@ -21,8 +24,10 @@ export const appRoutes: Routes = [
         path: '', runGuardsAndResolvers: 'always',
         canActivate: [AuthGuard],
         children: [
-            { path: 'admin', component: AdminComponent, resolve: {users: UserListResolver} },
-            { path: 'admin/:id', component: UserDetailComponent, resolve: {user: UserDetailResolver} },
+            { path: 'admin', component: AdminComponent, resolve: { users: UserListResolver } },
+            { path: 'admin/edit', component: UserEditComponent, resolve: { user: UserEditResolver },
+                                  canDeactivate: [PreventUnsavedChanges]},
+            { path: 'admin/:id', component: UserDetailComponent, resolve: { user: UserDetailResolver } },
         ]
     },
 

@@ -1,0 +1,62 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-4">
+      <h1>Your Profile</h1>
+    </div>
+    <div class="col-sm-8">
+      <div class="alert alert-info" *ngIf="editForm.dirty">
+        <strong>Information:</strong> You have made changes. Any unsaved changes will be lost!
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="card">
+        <img class="card-img-top img-thumbnail" src="{{user.photoUrl}}" alt="{{user.firstName + ' ' + user.lastName}}">
+        <div class="card-body">
+          <div>
+            <strong>Last Active:</strong>
+            <p>{{user.lastActive}}</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card-footer">
+        <button [disabled]="!editForm.dirty" class="btn btn-success btn-block" form="editForm">Save Changes</button>
+      </div>
+    </div>
+
+    <div class="col-sm-8">
+      <div class="tab-panel">
+
+        <tabset class="user-tabset">
+          <tab heading="Edit Profile">
+            <form #editForm="ngForm" (ngSubmit)="updateUser()" id="editForm">
+              <h4>First name</h4>
+              <input type="text" class="form-control" name="firstName" [(ngModel)]="user.firstName">
+              <h4>Last name</h4>
+              <input type="text" class="form-control" name="lastName" [(ngModel)]="user.lastName">
+              <h4>Username</h4>
+              <input type="text" class="form-control" name="username" [(ngModel)]="user.username">
+              <h4>Gender</h4>
+              <select name="gender" class="form-control" [(ngModel)]="user.gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              <h4>Created</h4>
+              <p>{{user.created | date:"dd MMM yyyy"}}</p>
+              <h4>Last Active</h4>
+              <p>{{user.lastActive | date:"dd MMM yyyy"}}</p>
+            </form>
+          </tab>
+          <tab heading="Edit Photos">
+            <p>will add photo edit here</p>
+          </tab>
+        </tabset>
+      </div>
+
+    </div>
+  </div>
+</div>
