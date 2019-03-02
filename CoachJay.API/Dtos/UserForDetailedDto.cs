@@ -15,6 +15,6 @@ namespace CoachJay.API.Dtos
         public DateTime Created { get; set; }
         public DateTime LastActive { get; set; }
         public string PhotoUrl { get; set; }
-        public ICollection<PhotosForDetailedDto> Photos { get; set; }
+        public ICollection<PhotoForDetailedDto> Photos { get; set; }
     }
 }

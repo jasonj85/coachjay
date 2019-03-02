@@ -12,7 +12,7 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="card">
-        <img class="card-img-top img-thumbnail" src="{{user.photoUrl}}" alt="{{user.firstName + ' ' + user.lastName}}">
+        <img class="card-img-top img-thumbnail" src="{{photoUrl}}" alt="{{user.firstName + ' ' + user.lastName}}">
         <div class="card-body">
           <div>
             <strong>Last Active:</strong>
@@ -29,7 +29,6 @@
 
     <div class="col-sm-8">
       <div class="tab-panel">
-
         <tabset class="user-tabset">
           <tab heading="Edit Profile">
             <form #editForm="ngForm" (ngSubmit)="updateUser()" id="editForm">
@@ -52,11 +51,10 @@
             </form>
           </tab>
           <tab heading="Edit Photos">
-            <p>will add photo edit here</p>
+            <app-photo-editor [photos]="user.photos" (getMemberPhotoChange)="updateMainPhoto($event)"></app-photo-editor>
           </tab>
         </tabset>
       </div>
-
     </div>
   </div>
 </div>

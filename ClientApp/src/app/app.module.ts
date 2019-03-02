@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
 import { NgxGalleryModule } from 'ngx-gallery';
 import { JwtModule } from '@auth0/angular-jwt';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -29,7 +30,7 @@ import { UserListResolver } from './_resolvers/user-list-resolver';
 import { UserEditComponent } from './admin/user-edit/user-edit.component';
 import { UserEditResolver } from './_resolvers/user-edit-resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes-guard';
-
+import { PhotoEditorComponent } from './admin/photo-editor/photo-editor.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -47,7 +48,8 @@ export function tokenGetter() {
       AdminComponent,
       UserListComponent,
       UserDetailComponent,
-      UserEditComponent
+      UserEditComponent,
+      PhotoEditorComponent
    ],
    imports: [
       BrowserModule,
@@ -55,6 +57,7 @@ export function tokenGetter() {
       HttpClientModule,
       FormsModule,
       NgxGalleryModule,
+      FileUploadModule,
       BsDropdownModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       TabsModule.forRoot(),

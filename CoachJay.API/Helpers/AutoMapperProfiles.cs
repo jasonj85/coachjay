@@ -17,8 +17,10 @@ namespace CoachJay.API.Helpers
                 .ForMember(dest => dest.PhotoUrl, opt =>
                     opt.MapFrom(src => src.Photos.FirstOrDefault(p => p.IsMain).Url)
                 );
-            CreateMap<Photo, PhotosForDetailedDto>();
             CreateMap<UserForUpdateDto, User>();
+            CreateMap<Photo, PhotoForDetailedDto>();
+            CreateMap<Photo, PhotoForReturnDto>();
+            CreateMap<PhotoForCreationDto, Photo >();
         }
     }
 }
