@@ -12,22 +12,27 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
+  // get list of all users
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl + 'users');
   }
 
+  // retrieve an individual user
   getUser(id): Observable<User> {
     return this.http.get<User>(this.baseUrl + 'users/' + id);
   }
 
+  // update date for a single user
   updateUser(id: number, user: User) {
     return this.http.put(this.baseUrl + 'users/' + id, user);
   }
 
+  // set main photo for a user
   setMainPhoto(userId: number, id: number) {
     return this.http.post(this.baseUrl + 'users/' + userId + '/photos/' + id + '/setMain', {});
   }
 
+  // detele individual photo
   deletePhoto(userId: number, id: number) {
     return this.http.delete(this.baseUrl + 'users/' + userId + '/photos/' + id);
   }

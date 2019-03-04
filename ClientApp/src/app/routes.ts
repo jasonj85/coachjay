@@ -11,6 +11,7 @@ import { UserListResolver } from './_resolvers/user-list-resolver';
 import { UserEditComponent } from './admin/user-edit/user-edit.component';
 import { UserEditResolver } from './_resolvers/user-edit-resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes-guard';
+import { RegisterComponent } from './register/register.component';
 
 export const appRoutes: Routes = [
     // standard pages
@@ -18,6 +19,7 @@ export const appRoutes: Routes = [
     { path: 'blog', component: BlogComponent},
     { path: 'insights', component: InsightsComponent},
     { path: 'questions', component: QuestionsComponent},
+    { path: 'register', component: RegisterComponent},
 
     // protected admin pages
     {

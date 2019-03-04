@@ -16,18 +16,22 @@ constructor() { }
     });
   }
 
+  // display success message
   success(message: string) {
     alertify.success(message);
   }
 
+  // display error message
   error(message: string) {
     alertify.error(message);
   }
 
+  // display warning message
   warning(message: string) {
     alertify.warning(message);
   }
 
+  // display standard message
   message(message: string) {
     alertify.message(message);
   }
