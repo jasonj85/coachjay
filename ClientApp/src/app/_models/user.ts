@@ -6,6 +6,7 @@ export interface User {
   firstName: string;
   lastName: string;
   gender: string;
+  dateOfBirth: Date;
   created: Date;
   lastActive: Date;
   photoUrl: string;

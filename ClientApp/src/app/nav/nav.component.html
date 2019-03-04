@@ -27,7 +27,7 @@
 
       <div *ngIf="loggedIn()" class="btn-group" dropdown>
         <span class="mr-1">
-          <img src="{{photoUrl}}" alt="{{authService.currentUser.firstName}}">
+          <img src="{{photoUrl || '../../assets/user.png'}}" alt="{{authService.currentUser.firstName}}">
         </span>
         <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
                 aria-controls="dropdown-basic">

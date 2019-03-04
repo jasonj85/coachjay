@@ -20,7 +20,8 @@ namespace CoachJay.API.Helpers
             CreateMap<UserForUpdateDto, User>();
             CreateMap<Photo, PhotoForDetailedDto>();
             CreateMap<Photo, PhotoForReturnDto>();
-            CreateMap<PhotoForCreationDto, Photo >();
+            CreateMap<PhotoForCreationDto, Photo>();
+            CreateMap<UserForRegisterDto, User>();
         }
     }
 }
