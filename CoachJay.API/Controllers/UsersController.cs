@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using CoachJay.API.Data;
 using CoachJay.API.Dtos;
+using CoachJay.API.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CoachJay.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]

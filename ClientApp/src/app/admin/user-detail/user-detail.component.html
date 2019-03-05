@@ -9,7 +9,7 @@
         <div class="card-body">
           <div>
             <strong>Last Active:</strong>
-            <p>{{user.lastActive}}</p>
+            <p>{{user.lastActive | timeAgo}}</p>
           </div>
         </div>
 
@@ -28,9 +28,9 @@
             <h4>Gender</h4>
             <p>{{user.gender | titlecase}}</p>
             <h4>Created</h4>
-            <p>{{user.created | date:"dd MMM yyyy"}}</p>
+            <p>{{user.created | date}}</p>
             <h4>Last Active</h4>
-            <p>{{user.lastActive | date:"dd MMM yyyy"}}</p>
+            <p>{{user.lastActive | timeAgo}}</p>
 
           </tab>
           <tab heading="Photos">

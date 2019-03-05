@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using CoachJay.API.Data;
 using CoachJay.API.Dtos;
+using CoachJay.API.Helpers;
 using CoachJay.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -45,7 +46,7 @@ namespace CoachJay.API.Controllers
 
             var userToReturn = _mapper.Map<UserForDetailedDto>(createdUser);
 
-            return CreatedAtRoute("GetUser", new {controller = "Users", id = createdUser.Id}, userToReturn);
+            return CreatedAtRoute("GetUser", new { controller = "Users", id = createdUser.Id }, userToReturn);
 
         }
 

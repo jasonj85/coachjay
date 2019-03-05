@@ -15,7 +15,7 @@
       <i class="fa fa-user"></i> {{user.firstName}}
     </h6>
     <p class="card-text text-muted text-center">
-      Last Login: <br> {{user.lastActive | date: 'EEE d MMM yyyy'}}
+      Last Login: <br> {{user.lastActive | timeAgo}}
     </p>
   </div>
 </div>
