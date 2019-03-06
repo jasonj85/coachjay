@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CoachJay.Api.Data;
+using CoachJay.API.Helpers;
 using CoachJay.API.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -43,11 +45,32 @@ namespace CoachJay.API.Data
             return user;
         }
 
-        public async Task<IEnumerable<User>> GetUsers()
+        public async Task<PagedList<User>> GetUsers(UserParams userParams)
         {
-            var users = await _context.Users.Include(p => p.Photos).ToListAsync();
+            var users = _context.Users.Include(p => p.Photos).OrderByDescending(u => u.LastActive).AsQueryable();
+            users = users.Where(u => u.Id != userParams.UserId);
 
-            return users;
+            if (userParams.Age > 0)
+            {
+                var minAge = DateTime.Today.AddYears(-userParams.Age - 1);
+                var maxAge = DateTime.Today.AddYears(-userParams.Age);
+                users = users.Where(u => u.DateOfBirth >= minAge && u.DateOfBirth <= maxAge);
+            }
+
+            if (!string.IsNullOrEmpty(userParams.OrderBy))
+            {
+                switch (userParams.OrderBy)
+                {
+                    case "created": 
+                        users = users.OrderByDescending(u => u.Created);
+                        break;
+                    default: 
+                        users = users.OrderByDescending(u => u.LastActive);
+                        break;                        
+                }
+            }
+
+            return await PagedList<User>.CreateAsync(users, userParams.PageNumber, userParams.PageSize);
         }
 
         public async Task<bool> SaveAll()
