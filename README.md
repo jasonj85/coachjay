@@ -1,4 +1,9 @@
 # coachjay
 www.coachjay.uk
 
-Personal website so no detailed ReadMe required
+# Development Notes
+Authentication: JSON Web Token (JWT)
+ClientApp - contains the front end Angular application. 
+CoachJay.API - contains the .Net Core API
+
+Client App communicates with the MySql database via the .Net Core API requests.
