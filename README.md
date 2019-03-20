@@ -1,4 +1,4 @@
 # coachjay
 www.coachjay.uk
 
-Private website so no detailed ReadMe required
+Personal website so no detailed ReadMe required
