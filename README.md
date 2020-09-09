@@ -1,7 +1,3 @@
-**Launch Date = End of March 2019**
-
-www.coachjay.uk
-
 ## Technology Used ##
 * Angular 6/7
 * .Net Core
